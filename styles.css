@@ -1,195 +1,115 @@
-/* Reseteo de estilos predeterminados */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Tipografía global */
 body {
-    font-family: 'Poppins', sans-serif; /* Fuente moderna y legible */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #fdf4f4; /* Fondo pastel suave */
+    font-family: Arial, sans-serif;
+    background: #ffe9f6;
 }
 
-/* Estilos para el header */
-header {
-    background-color: #d3b0f3; /* Color pastel suave */
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-    border-bottom: 2px solid #cda8e5; /* Línea sutil para separar el header */
-}
-
-header .logo h1 {
-    font-size: 24px;
-    font-family: 'Lora', serif; /* Fuente elegante */
-}
-
-/* Menú de navegación */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #f3c5f3; /* Toque pastel en hover */
-}
-
-/* Barra lateral */
-.sidebar {
-    width: 60px;
-    background-color: #c8a1d7; /* Color pastel suave para la barra lateral */
-    color: white;
-    height: 100vh;
+.menu {
     position: fixed;
     top: 0;
-    left: 0;
-    transition: all 0.3s ease;
-    z-index: 9;
-    overflow-y: auto;
-}
-
-.sidebar .toggle-button {
-    background-color: #c8a1d7;
-    color: white;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    margin: 10px;
-    display: block;
-    width: 100%;
-    text-align: left;
-}
-
-/* Géneros literarios */
-.genre-list {
-    display: none;
-    padding: 20px 0;
-}
-
-.sidebar.open {
+    left: -100%;
     width: 250px;
+    height: 100vh;
+    background: #fbc3fb;
+    transition: left 0.3s ease-in-out;
+    padding-top: 60px;
 }
 
-.sidebar.open .genre-list {
-    display: block;
-}
-
-.genre-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.genre-list li {
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 14px;
-    font-family: 'Quicksand', sans-serif; /* Fuente suave */
-}
-
-.genre-list li:hover {
-    background-color: #f3c5f3;
-}
-
-/* Contenido principal */
-.main-content {
-    margin-left: 60px; /* Espacio por la barra lateral cerrada */
-    padding: 80px 20px 20px 20px; /* Espacio por el header */
-    width: 100%;
-    transition: margin-left 0.3s ease;
-    flex-grow: 1;
-}
-
-.main-content.open {
-    margin-left: 250px; /* Mueve el contenido cuando la barra lateral está abierta */
-}
-
-/* Sección de libros destacados */
-.highlight h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #4e3d71; /* Color pastel para el título */
-}
-
-.featured-books {
+.menu a {
     display: flex;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.book {
-    background-color: #f8e7fc; /* Fondo pastel suave */
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.book:hover {
-    transform: translateY(-5px); /* Efecto de hover suave */
-}
-
-.book h3 {
-    font-size: 18px;
-    color: #4e3d71;
-    font-family: 'Lora', serif;
-    margin-bottom: 10px;
-}
-
-.book p {
-    font-size: 14px;
-    color: #7a5b92;
-    font-family: 'Quicksand', sans-serif;
-}
-
-/* Estilos de sección sobre nosotros */
-.about-us {
-    background-color: #f0e7f3; /* Fondo suave */
-    padding: 40px;
-    border-radius: 8px;
-    margin-top: 40px;
-}
-
-.about-us h2 {
-    font-size: 22px;
-    color: #4e3d71;
-    margin-bottom: 20px;
-}
-
-.about-us p {
-    font-size: 16px;
-    color: #7a5b92;
-    line-height: 1.6;
-}
-
-/* Footer */
-footer {
-    background-color: #d3b0f3;
+    align-items: center;
     color: white;
-    text-align: center;
-    padding: 10px 0;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.menu a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-btn {
     position: fixed;
-    width: 100%;
-    bottom: 0;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-btn div {
+    width: 30px;
+    height: 4px;
+    background: rgb(0, 0, 0);
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+.menu.open {
+    left: 0;
+}
+
+.menu-btn.open div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.open div:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.open div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu-flotante {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: auto;
+    background-color:#fbc3fb;
+    padding: 10px 0;
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 999;
+    border-radius: 0 0 0 10px;
+}
+
+.menu-flotante ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-flotante ul li {
+    margin: 0 5px;
+}
+
+.menu-flotante ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    transition: background 0.3s;
+}
+
+.menu-flotante ul li a:hover {
+    background: #575757;
 }
