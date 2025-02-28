@@ -1,45 +1,110 @@
+/* Reset de márgenes y paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background: #ffe9f6;
+/* Estilos del cuerpo */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Para usar el 100% de la ventana */
+    box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-direction: column; 
+    min-height: 100%;      /* Garantiza ocupar toda la pantalla */
+    font-family: 'Amatic SC'; 
+    background: #f8f9fa; 
+}
+
+/* Estilos del header */
+header {
+    text-align: center; /* Centra el contenido dentro del header */
+    margin-top: 10px; /* Espacio en la parte superior */
+}
+/* Estilos del logo */
+.logo {
+    margin-bottom: 10px; /* Espacio entre el logo y la barra de búsqueda */
+}
+.logo img {
+    width: 250px; /* Aumenta el tamaño del logo según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+/* Estilos para la barra de búsqueda */
+.search-container {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna para que el input esté encima del botón */
+    align-items: center; /* Centra el contenido */
+    margin-top: 10px; /* Espacio entre el logo y la barra de búsqueda */
+}
+.search-container input {
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    width: 250px; /* Ancho de la barra de búsqueda */
+    margin-bottom: 5px; /* Espacio entre el campo de búsqueda y el botón */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+.search-container input:focus {
+    border-color: #A81319; /* Cambia el color del borde al enfocar */
+    outline: none; /* Elimina el contorno predeterminado */
+}
+.search-container button {
+    padding: 10px 15px;
+    background-color: #A81319; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+.search-container button:hover {
+    background-color: #8c0e14; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Aumenta un poco el tamaño al pasar el mouse */
+}
+.search-container button:active {
+    transform: scale(0.95); /* Efecto de pulsación al hacer clic */
+}
+/* Estilos del contenido principal */
+main {
+    flex: 1;            /* Ocupa el espacio restante */
+    text-align: center; 
+    margin: 20px;       /* Puedes ajustar este margen si quieres menos espacio */
+}
+
+/* Estilos del menú lateral */
 .menu {
     position: fixed;
     top: 0;
     left: -100%;
     width: 250px;
     height: 100vh;
-    background: #fbc3fb;
+    background: #FFFFFF; /* Fondo blanco */
     transition: left 0.3s ease-in-out;
     padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
-
 .menu a {
     display: flex;
     align-items: center;
-    color: white;
+    color: #BEBEBE; /* Color de enlace gris claro */
     padding: 15px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 30px;
     transition: background 0.3s;
 }
-
 .menu a img {
     width: 24px;
     height: 24px;
     margin-right: 10px;
 }
-
 .menu a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(190, 190, 190, 0.1); /* Hover gris claro */
 }
-
+/* Estilos del botón de menú */
 .menu-btn {
     position: fixed;
     top: 20px;
@@ -49,44 +114,40 @@ body {
     cursor: pointer;
     z-index: 1000;
 }
-
 .menu-btn div {
     width: 30px;
     height: 4px;
-    background: rgb(0, 0, 0);
+    background: rgb(0, 0, 0); /* Color negro para las líneas del botón */
     margin: 6px 0;
     transition: 0.3s;
 }
-
+/* Estado abierto del menú */
 .menu.open {
-    left: 0;
+    left: 0; /* Muestra el menú */
 }
-
 .menu-btn.open div:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
-
 .menu-btn.open div:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Oculta la línea del medio */
 }
-
 .menu-btn.open div:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
 }
-
+/* Estilos del menú flotante */
 .menu-flotante {
     position: fixed;
     top: 0;
     right: 0;
     width: auto;
-    background-color:#fbc3fb;
+    background-color: #FFFFFF; /* Fondo blanco */
     padding: 10px 0;
     box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     z-index: 999;
     border-radius: 0 0 0 10px;
+    font-family: 'Amatic SC', cursive; /* Aplica la fuente Amatic SC */
 }
-
 .menu-flotante ul {
     list-style: none;
     margin: 0;
@@ -96,20 +157,115 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .menu-flotante ul li {
     margin: 0 5px;
 }
-
 .menu-flotante ul li a {
     display: block;
     text-decoration: none;
-    color: white;
-    font-size: 18px;
+    color: #BEBEBE; /* Color de enlace gris claro */
+    font-size: 25px;
     padding: 15px;
     transition: background 0.3s;
 }
-
 .menu-flotante ul li a:hover {
-    background: #575757;
+    background: rgba(190, 190, 190, 0.1); /* Hover gris claro */
+}
+/* Estilos para la sección "Sobre Nosotros" */
+.sobre-nosotros {
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins a los párrafos */
+    margin: 20px auto; /* Espacio superior e inferior y centrado */
+    max-width: 800px; /* Ancho máximo para la sección */
+    padding: 20px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+.sobre-nosotros h2 {
+    font-family: 'Amatic SC', cursive; /* Aplica la fuente Amatic SC al título */
+    text-align: center; /* Centra el título */
+    margin-bottom: 15px; /* Espacio inferior */
+    font-size: 36px; /* Tamaño del texto del título */
+    color: #A81319; /* Color del título */
+}
+.sobre-nosotros h3 {
+    font-family: 'Amatic SC', cursive; /* Aplica la fuente Amatic SC al subtítulo */
+    margin-top: 20px; /* Espacio superior para el subtítulo */
+    margin-bottom: 10px; /* Espacio inferior para el subtítulo */
+    font-size: 28px; /* Tamaño del subtítulo */
+    color: #A81319; /* Color del subtítulo */
+}
+.sobre-nosotros p {
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin-bottom: 15px; /* Espacio entre párrafos */
+    font-size: 16px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+}
+/* Estilos específicos para la página de contacto */
+h1 {
+    font-family: 'Amatic SC', cursive; /* Usar Amatic SC para el título */
+    font-size: 2.5em; /* Tamaño del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+form {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos del formulario en columna */
+    align-items: center; /* Centra los elementos del formulario */
+}
+form div {
+    margin-bottom: 15px; /* Espacio entre los campos del formulario */
+}
+form label {
+    display: block; /* Asegura que la etiqueta ocupe toda la línea */
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+}
+form input,
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    width: 250px; /* Ancho de los campos del formulario */
+    font-family: 'Poppins', sans-serif; /* Aplica Poppins a los campos del formulario */
+}
+form button {
+    padding: 10px 15px;
+    background-color: #A81319; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+form button:hover {
+    background-color: #8c0e14; /* Color más oscuro al pasar el mouse */
+}
+/* Estilos del footer */
+footer {
+    margin-top: auto;         /* Se ubica al final del contenedor flex */
+    background-color: #f1f1f1;
+    padding: 5px;             /* Reducir padding para hacerlo más delgado */
+    text-align: center;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;          /* Fuente más pequeña si deseas */
+}
+
+.footer-content {
+    max-width: 1200px; /* Ancho máximo del contenido del footer */
+    margin: 0 auto; /* Centra el contenido */
+}
+.footer-content p {
+    margin: 5px 0; /* Espacio entre los párrafos */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+}
+.social-media {
+    margin-top: 10px; /* Espacio superior para las redes sociales */
+}
+.social-media a {
+    margin: 0 10px; /* Espacio entre los enlaces de redes sociales */
+    text-decoration: none; /* Elimina el subrayado */
+    color: #A81319; /* Color del texto de los enlaces */
+}
+.social-media a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
 }
