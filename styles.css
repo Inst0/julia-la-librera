@@ -11,7 +11,6 @@ html, body {
     height: 100%; /* Para usar el 100% de la ventana */
     box-sizing: border-box;
 }
-
 body {
     display: flex;
     flex-direction: column; 
@@ -19,7 +18,6 @@ body {
     font-family: 'Amatic SC'; 
     background: #f8f9fa; 
 }
-
 /* Estilos del header */
 header {
     text-align: center; /* Centra el contenido dentro del header */
@@ -33,40 +31,29 @@ header {
     width: 250px; /* Aumenta el tamaño del logo según sea necesario */
     height: auto; /* Mantiene la proporción de la imagen */
 }
-/* Estilos para la barra de búsqueda */
-.search-container {
-    display: flex;
-    flex-direction: column; /* Cambia la dirección a columna para que el input esté encima del botón */
-    align-items: center; /* Centra el contenido */
-    margin-top: 10px; /* Espacio entre el logo y la barra de búsqueda */
+/* Estilos para el texto de descubrimiento */
+.texto-descubrimiento {
+    margin-top: 20px; /* Espaciado superior */
 }
-.search-container input {
-    padding: 10px;
-    border: 1px solid #ccc; /* Borde gris claro */
-    border-radius: 4px; /* Bordes redondeados */
-    width: 250px; /* Ancho de la barra de búsqueda */
-    margin-bottom: 5px; /* Espacio entre el campo de búsqueda y el botón */
-    transition: border-color 0.3s; /* Transición suave para el borde */
+.texto-descubrimiento p {
+    font-size: 24px; /* Aumenta el tamaño de la fuente */
+    margin: 20px 0; /* Ajusta el margen superior e inferior */
+    font-weight: bold; /* Opcional: hace el texto en negrita */
 }
-.search-container input:focus {
-    border-color: #A81319; /* Cambia el color del borde al enfocar */
-    outline: none; /* Elimina el contorno predeterminado */
+.whatsapp-btn {
+    background-color: #25D366; /* Color de WhatsApp */
+    color: white; /* Texto blanco */
+    padding: 15px 30px; /* Aumenta el espaciado interno (arriba/abajo, izquierda/derecha) */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 30px; /* Aumenta el tamaño de la fuente */
+    display: inline-block; /* Para que se comporte como un bloque */
+    transition: background-color 0.3s; /* Transición suave */
 }
-.search-container button {
-    padding: 10px 15px;
-    background-color: #A81319; /* Color de fondo del botón */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 4px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
-}
-.search-container button:hover {
-    background-color: #8c0e14; /* Color más oscuro al pasar el mouse */
-    transform: scale(1.05); /* Aumenta un poco el tamaño al pasar el mouse */
-}
-.search-container button:active {
-    transform: scale(0.95); /* Efecto de pulsación al hacer clic */
+.whatsapp-btn:hover {
+    background-color: #128C7E; /* Color más oscuro al pasar el ratón */
 }
 /* Estilos del contenido principal */
 main {
@@ -74,7 +61,6 @@ main {
     text-align: center; 
     margin: 20px;       /* Puedes ajustar este margen si quieres menos espacio */
 }
-
 /* Estilos del menú lateral */
 .menu {
     position: fixed;
@@ -249,7 +235,6 @@ footer {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;          /* Fuente más pequeña si deseas */
 }
-
 .footer-content {
     max-width: 1200px; /* Ancho máximo del contenido del footer */
     margin: 0 auto; /* Centra el contenido */
@@ -268,4 +253,43 @@ footer {
 }
 .social-media a:hover {
     text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .logo img {
+        width: 200px; /* Reduce el tamaño del logo en pantallas pequeñas */
+    }
+    
+    .texto-descubrimiento p {
+        font-size: 20px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+    }
+    .whatsapp-btn {
+        font-size: 24px; /* Reduce el tamaño del botón en pantallas pequeñas */
+        padding: 10px 20px; /* Aumenta el espaciado interno */
+    }
+    .menu a {
+        font-size: 24px; /* Reduce el tamaño de los enlaces del menú */
+    }
+    .menu-flotante ul li a {
+        font-size: 20px; /* Reduce el tamaño de los enlaces del menú flotante */
+    }
+    .sobre-nosotros {
+        margin: 10px; /* Reduce el margen en pantallas pequeñas */
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    }
+}
+@media (max-width: 480px) {
+    .texto-descubrimiento p {
+        font-size: 18px; /* Reduce aún más el tamaño de la fuente en pantallas muy pequeñas */
+    }
+    .whatsapp-btn {
+        font-size: 20px; /* Reduce aún más el tamaño del botón en pantallas muy pequeñas */
+        padding: 8px 15px; /* Ajusta el espaciado interno */
+    }
+    .menu a {
+        font-size: 20px; /* Reduce el tamaño de los enlaces del menú */
+    }
+    .menu-flotante ul li a {
+        font-size: 18px; /* Reduce el tamaño de los enlaces del menú flotante */
+    }
 }
