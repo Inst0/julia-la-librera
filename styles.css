@@ -257,39 +257,48 @@ footer {
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
     .logo img {
-        width: 200px; /* Reduce el tamaño del logo en pantallas pequeñas */
+        width: 220px; /* Aumenta el tamaño del logo en pantallas pequeñas */
     }
-    
     .texto-descubrimiento p {
-        font-size: 20px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        font-size: 24px; /* Aumenta el tamaño de la fuente en pantallas pequeñas */
     }
     .whatsapp-btn {
-        font-size: 24px; /* Reduce el tamaño del botón en pantallas pequeñas */
-        padding: 10px 20px; /* Aumenta el espaciado interno */
+        font-size: 26px; /* Aumenta el tamaño del botón en pantallas pequeñas */
+        padding: 12px 25px; /* Ajusta el espaciado interno */
     }
     .menu a {
-        font-size: 24px; /* Reduce el tamaño de los enlaces del menú */
+        font-size: 26px; /* Aumenta el tamaño de los enlaces del menú */
     }
     .menu-flotante ul li a {
-        font-size: 20px; /* Reduce el tamaño de los enlaces del menú flotante */
+        font-size: 22px; /* Aumenta el tamaño de los enlaces del menú flotante */
+    }
+    .menu-btn {
+        top: 30px; /* Ajusta la posición del botón del menú para que no cubra el logo */
+        left: 30px; /* Ajusta la posición del botón del menú */
+    }
+    .texto-descubrimiento {
+        margin-top: 40px; /* Aumenta el margen superior para evitar superposición */
     }
     .sobre-nosotros {
-        margin: 10px; /* Reduce el margen en pantallas pequeñas */
-        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+        margin: 15px; /* Reduce el margen en pantallas pequeñas */
+        padding: 15px; /* Reduce el padding en pantallas pequeñas */
     }
 }
 @media (max-width: 480px) {
+    .logo img {
+        width: 200px; /* Ajusta el tamaño del logo en pantallas muy pequeñas */
+    }
     .texto-descubrimiento p {
-        font-size: 18px; /* Reduce aún más el tamaño de la fuente en pantallas muy pequeñas */
+        font-size: 20px; /* Aumenta el tamaño de la fuente en pantallas muy pequeñas */
     }
     .whatsapp-btn {
-        font-size: 20px; /* Reduce aún más el tamaño del botón en pantallas muy pequeñas */
-        padding: 8px 15px; /* Ajusta el espaciado interno */
+        font-size: 22px; /* Ajusta el tamaño del botón en pantallas muy pequeñas */
+        padding: 10px 20px; /* Ajusta el espaciado interno */
     }
     .menu a {
-        font-size: 20px; /* Reduce el tamaño de los enlaces del menú */
+        font-size: 22px; /* Ajusta el tamaño de los enlaces del menú */
     }
     .menu-flotante ul li a {
-        font-size: 18px; /* Reduce el tamaño de los enlaces del menú flotante */
+        font-size: 20px; /* Ajusta el tamaño de los enlaces del menú flotante */
     }
 }
