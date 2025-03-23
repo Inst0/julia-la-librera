@@ -254,51 +254,50 @@ footer {
 .social-media a:hover {
     text-decoration: underline; /* Subrayado al pasar el mouse */
 }
-/* Media Queries para Responsividad */
+/* Ajustes generales para pantallas pequeñas */
 @media (max-width: 768px) {
-    .logo img {
-        width: 220px; /* Aumenta el tamaño del logo en pantallas pequeñas */
+    header {
+        margin-top: 50px; /* Aumenta el espacio superior del header */
     }
-    .texto-descubrimiento p {
-        font-size: 24px; /* Aumenta el tamaño de la fuente en pantallas pequeñas */
-    }
-    .whatsapp-btn {
-        font-size: 26px; /* Aumenta el tamaño del botón en pantallas pequeñas */
-        padding: 12px 25px; /* Ajusta el espaciado interno */
-    }
-    .menu a {
-        font-size: 26px; /* Aumenta el tamaño de los enlaces del menú */
-    }
-    .menu-flotante ul li a {
-        font-size: 22px; /* Aumenta el tamaño de los enlaces del menú flotante */
+    .logo {
+        margin-bottom: 20px; /* Aumenta el espacio entre el logo y el contenido */
     }
     .menu-btn {
-        top: 30px; /* Ajusta la posición del botón del menú para que no cubra el logo */
-        left: 30px; /* Ajusta la posición del botón del menú */
+        top: 50px; /* Aumenta la posición del botón del menú */
     }
-    .texto-descubrimiento {
-        margin-top: 40px; /* Aumenta el margen superior para evitar superposición */
+    main {
+        margin-top: 20px; /* Aumenta el margen superior para el contenido principal */
     }
-    .sobre-nosotros {
-        margin: 15px; /* Reduce el margen en pantallas pequeñas */
-        padding: 15px; /* Reduce el padding en pantallas pequeñas */
+    .sobre-nosotros h2 {
+        font-size: 28px; /* Reduce el tamaño del título en "Sobre Nosotros" */
+    }
+    .sobre-nosotros h3 {
+        font-size: 24px; /* Reduce el tamaño del subtítulo en "Sobre Nosotros" */
+    }
+    .sobre-nosotros p {
+        font-size: 14px; /* Reduce el tamaño del texto en "Sobre Nosotros" */
     }
 }
 @media (max-width: 480px) {
-    .logo img {
-        width: 200px; /* Ajusta el tamaño del logo en pantallas muy pequeñas */
+    header {
+        margin-top: 60px; /* Aumenta el espacio superior del header */
+    }
+    .logo {
+        margin-bottom: 25px; /* Aumenta el espacio entre el logo y el contenido */
+    }
+    .menu-btn {
+        top: 60px; /* Aumenta la posición del botón del menú */
     }
     .texto-descubrimiento p {
-        font-size: 20px; /* Aumenta el tamaño de la fuente en pantallas muy pequeñas */
+        font-size: 18px; /* Reduce aún más el tamaño de la fuente en pantallas muy pequeñas */
     }
-    .whatsapp-btn {
-        font-size: 22px; /* Ajusta el tamaño del botón en pantallas muy pequeñas */
-        padding: 10px 20px; /* Ajusta el espaciado interno */
+    .sobre-nosotros h2 {
+        font-size: 24px; /* Reduce el tamaño del título en "Sobre Nosotros" */
     }
-    .menu a {
-        font-size: 22px; /* Ajusta el tamaño de los enlaces del menú */
+    .sobre-nosotros h3 {
+        font-size: 22px; /* Reduce el tamaño del subtítulo en "Sobre Nosotros" */
     }
-    .menu-flotante ul li a {
-        font-size: 20px; /* Ajusta el tamaño de los enlaces del menú flotante */
+    .sobre-nosotros p {
+        font-size: 12px; /* Reduce aún más el tamaño del texto en "Sobre Nosotros" */
     }
 }
