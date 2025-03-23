@@ -4,82 +4,109 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Estilos del cuerpo */
+/* Estilos generales */
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Para usar el 100% de la ventana */
-    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-family: 'Amatic SC', cursive;
+    background: #f8f9fa;
 }
+/* Layout Principal */
 body {
     display: flex;
-    flex-direction: column; 
-    min-height: 100%;      /* Garantiza ocupar toda la pantalla */
-    font-family: 'Amatic SC'; 
-    background: #f8f9fa; 
+    flex-direction: column;
+    min-height: 100vh;
 }
-/* Estilos del header */
+/* HEADER */
 header {
-    text-align: center; /* Centra el contenido dentro del header */
-    margin-top: 10px; /* Espacio en la parte superior */
+    text-align: center;
+    margin: 1rem 0;
 }
-/* Estilos del logo */
-.logo {
-    margin-bottom: 10px; /* Espacio entre el logo y la barra de búsqueda */
-}
+/* LOGO */
 .logo img {
-    width: 250px; /* Aumenta el tamaño del logo según sea necesario */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 60%; /* Hace el logo más adaptable */
+    max-width: 250px;
+    height: auto;
 }
-/* Estilos para el texto de descubrimiento */
-.texto-descubrimiento {
-    margin-top: 20px; /* Espaciado superior */
-}
+
+
+
+/* TEXTO DE DESCUBRIMIENTO */
 .texto-descubrimiento p {
-    font-size: 24px; /* Aumenta el tamaño de la fuente */
-    margin: 20px 0; /* Ajusta el margen superior e inferior */
-    font-weight: bold; /* Opcional: hace el texto en negrita */
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    font-weight: bold;
 }
+
+/* Contenedor de los botones */
+.botones-container {
+    display: flex;
+    flex-direction: column; /* Acomoda los botones uno debajo del otro */
+    align-items: center; /* Centra los botones */
+    gap: 1rem; /* Espacio entre los botones */
+    margin-top: 1rem; /* Espacio desde arriba */
+}
+
+/* BOTÓN DE WHATSAPP */
 .whatsapp-btn {
-    background-color: #25D366; /* Color de WhatsApp */
-    color: white; /* Texto blanco */
-    padding: 15px 30px; /* Aumenta el espaciado interno (arriba/abajo, izquierda/derecha) */
-    border: none; /* Sin bordes */
+    background-color: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+/* BOTÓN DE VISÍTANOS */
+.visit-btn {
+    background-color: #00b7ff; 
+    color: white; /* Texto negro */
+    padding: 1rem 2rem; /* Espaciado interno */
+    border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
     text-decoration: none; /* Sin subrayado */
     font-weight: bold; /* Texto en negrita */
-    font-size: 30px; /* Aumenta el tamaño de la fuente */
-    display: inline-block; /* Para que se comporte como un bloque */
+    font-size: 1.5rem; /* Tamaño de la fuente */
+    display: inline-block; /* Comportamiento en bloque */
+    text-align: center; /* Asegura el centrado del texto */
     transition: background-color 0.3s; /* Transición suave */
 }
-.whatsapp-btn:hover {
-    background-color: #128C7E; /* Color más oscuro al pasar el ratón */
+
+.visit-btn:hover {
+    background-color: #060470; /* Color más oscuro al pasar el mouse */
 }
-/* Estilos del contenido principal */
+
+/* MAIN */
 main {
-    flex: 1;            /* Ocupa el espacio restante */
-    text-align: center; 
-    margin: 20px;       /* Puedes ajustar este margen si quieres menos espacio */
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
 }
-/* Estilos del menú lateral */
+/* MENÚ LATERAL */
 .menu {
     position: fixed;
     top: 0;
     left: -100%;
     width: 250px;
     height: 100vh;
-    background: #FFFFFF; /* Fondo blanco */
+    background: #FFFFFF;
     transition: left 0.3s ease-in-out;
     padding-top: 60px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 .menu a {
     display: flex;
     align-items: center;
-    color: #BEBEBE; /* Color de enlace gris claro */
+    color: #BEBEBE;
     padding: 15px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 1.5rem;
     transition: background 0.3s;
 }
 .menu a img {
@@ -88,13 +115,13 @@ main {
     margin-right: 10px;
 }
 .menu a:hover {
-    background: rgba(190, 190, 190, 0.1); /* Hover gris claro */
+    background: rgba(190, 190, 190, 0.1);
 }
-/* Estilos del botón de menú */
+/* BOTÓN DEL MENÚ */
 .menu-btn {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 1rem;
+    left: 1rem;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -103,201 +130,191 @@ main {
 .menu-btn div {
     width: 30px;
     height: 4px;
-    background: rgb(0, 0, 0); /* Color negro para las líneas del botón */
+    background: rgb(0, 0, 0);
     margin: 6px 0;
     transition: 0.3s;
 }
-/* Estado abierto del menú */
+/* MENÚ ABIERTO */
 .menu.open {
-    left: 0; /* Muestra el menú */
+    left: 0;
 }
 .menu-btn.open div:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 .menu-btn.open div:nth-child(2) {
-    opacity: 0; /* Oculta la línea del medio */
+    opacity: 0;
 }
 .menu-btn.open div:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
 }
-/* Estilos del menú flotante */
+/* MENÚ FLOTANTE */
 .menu-flotante {
     position: fixed;
     top: 0;
     right: 0;
-    width: auto;
-    background-color: #FFFFFF; /* Fondo blanco */
+    background-color: #FFFFFF;
     padding: 10px 0;
     box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     z-index: 999;
     border-radius: 0 0 0 10px;
-    font-family: 'Amatic SC', cursive; /* Aplica la fuente Amatic SC */
 }
 .menu-flotante ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Se mantiene igual en PC */
     justify-content: center;
     align-items: center;
 }
 .menu-flotante ul li {
-    margin: 0 5px;
+    margin: 0 20px;
 }
 .menu-flotante ul li a {
-    display: block;
     text-decoration: none;
-    color: #BEBEBE; /* Color de enlace gris claro */
-    font-size: 25px;
-    padding: 15px;
+    color: #BEBEBE;
+    font-size: 2rem;
+    padding: 10px;
     transition: background 0.3s;
 }
 .menu-flotante ul li a:hover {
-    background: rgba(190, 190, 190, 0.1); /* Hover gris claro */
+    background: rgba(190, 190, 190, 0.1);
 }
-/* Estilos para la sección "Sobre Nosotros" */
+/* SECCIÓN SOBRE NOSOTROS */
 .sobre-nosotros {
-    font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins a los párrafos */
-    margin: 20px auto; /* Espacio superior e inferior y centrado */
-    max-width: 800px; /* Ancho máximo para la sección */
-    padding: 20px; /* Espacio interno */
-    border: 1px solid #ccc; /* Borde gris claro */
-    border-radius: 8px; /* Bordes redondeados */
-    background-color: #ffffff; /* Fondo blanco */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-family: 'Poppins', sans-serif;
+    margin: 1.5rem auto;
+    max-width: 800px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.sobre-nosotros h2, .sobre-nosotros h3 {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    color: #A81319;
 }
 .sobre-nosotros h2 {
-    font-family: 'Amatic SC', cursive; /* Aplica la fuente Amatic SC al título */
-    text-align: center; /* Centra el título */
-    margin-bottom: 15px; /* Espacio inferior */
-    font-size: 36px; /* Tamaño del texto del título */
-    color: #A81319; /* Color del título */
+    font-size: 2.25rem;
 }
 .sobre-nosotros h3 {
-    font-family: 'Amatic SC', cursive; /* Aplica la fuente Amatic SC al subtítulo */
-    margin-top: 20px; /* Espacio superior para el subtítulo */
-    margin-bottom: 10px; /* Espacio inferior para el subtítulo */
-    font-size: 28px; /* Tamaño del subtítulo */
-    color: #A81319; /* Color del subtítulo */
+    font-size: 1.75rem;
 }
 .sobre-nosotros p {
-    line-height: 1.6; /* Espaciado entre líneas */
-    margin-bottom: 15px; /* Espacio entre párrafos */
-    font-size: 16px; /* Tamaño del texto */
-    color: #333; /* Color del texto */
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
 }
-/* Estilos específicos para la página de contacto */
-h1 {
-    font-family: 'Amatic SC', cursive; /* Usar Amatic SC para el título */
-    font-size: 2.5em; /* Tamaño del título */
-    margin-bottom: 20px; /* Espacio debajo del título */
+
+.imagenes-sobre-nosotros {
+    display: flex; /* Usar flexbox para alinear las imágenes */
+    flex-direction: column; /* Asegura que las imágenes estén una debajo de la otra */
+    align-items: center; /* Centra las imágenes */
+    margin-top: 2rem; /* Espacio superior */
 }
+.imagenes-sobre-nosotros img {
+    max-width: 90%; /* Asegura que las imágenes no excedan el 90% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    margin: 0.5rem 0; /* Espacio vertical entre las imágenes */
+    border-radius: 8px; /* Bordes redondeados para un mejor diseño */
+}
+
+/* FORMULARIO */
 form {
     display: flex;
-    flex-direction: column; /* Coloca los elementos del formulario en columna */
-    align-items: center; /* Centra los elementos del formulario */
-}
-form div {
-    margin-bottom: 15px; /* Espacio entre los campos del formulario */
-}
-form label {
-    display: block; /* Asegura que la etiqueta ocupe toda la línea */
-    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+    flex-direction: column;
+    align-items: center;
 }
 form input,
 form textarea {
     padding: 10px;
-    border: 1px solid #ccc; /* Borde gris claro */
-    border-radius: 4px; /* Bordes redondeados */
-    width: 250px; /* Ancho de los campos del formulario */
-    font-family: 'Poppins', sans-serif; /* Aplica Poppins a los campos del formulario */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
 }
 form button {
     padding: 10px 15px;
-    background-color: #A81319; /* Color de fondo del botón */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 4px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    background-color: #A81319;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 form button:hover {
-    background-color: #8c0e14; /* Color más oscuro al pasar el mouse */
+    background-color: #8c0e14;
 }
-/* Estilos del footer */
+/* FOOTER */
 footer {
-    margin-top: auto;         /* Se ubica al final del contenedor flex */
+    margin-top: auto;
     background-color: #f1f1f1;
-    padding: 5px;             /* Reducir padding para hacerlo más delgado */
+    padding: 0.5rem;
     text-align: center;
     width: 100%;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;          /* Fuente más pequeña si deseas */
-}
-.footer-content {
-    max-width: 1200px; /* Ancho máximo del contenido del footer */
-    margin: 0 auto; /* Centra el contenido */
-}
-.footer-content p {
-    margin: 5px 0; /* Espacio entre los párrafos */
-    font-size: 14px; /* Tamaño de fuente más pequeño */
+    font-size: 0.875rem;
 }
 .social-media {
-    margin-top: 10px; /* Espacio superior para las redes sociales */
+    margin-top: 10px;
 }
 .social-media a {
-    margin: 0 10px; /* Espacio entre los enlaces de redes sociales */
-    text-decoration: none; /* Elimina el subrayado */
-    color: #A81319; /* Color del texto de los enlaces */
+    margin: 0 10px;
+    text-decoration: none;
+    color: #A81319;
 }
 .social-media a:hover {
-    text-decoration: underline; /* Subrayado al pasar el mouse */
+    text-decoration: underline;
 }
-/* Ajustes generales para pantallas pequeñas */
+/* 🔹 RESPONSIVE DESIGN 🔹 */
+/* TABLET (Pantallas menores a 768px) */
 @media (max-width: 768px) {
-    header {
-        margin-top: 50px; /* Aumenta el espacio superior del header */
-    }
-    .logo {
-        margin-bottom: 20px; /* Aumenta el espacio entre el logo y el contenido */
-    }
-    .menu-btn {
-        top: 50px; /* Aumenta la posición del botón del menú */
-    }
-    main {
-        margin-top: 20px; /* Aumenta el margen superior para el contenido principal */
-    }
-    .sobre-nosotros h2 {
-        font-size: 28px; /* Reduce el tamaño del título en "Sobre Nosotros" */
-    }
-    .sobre-nosotros h3 {
-        font-size: 24px; /* Reduce el tamaño del subtítulo en "Sobre Nosotros" */
-    }
-    .sobre-nosotros p {
-        font-size: 14px; /* Reduce el tamaño del texto en "Sobre Nosotros" */
-    }
-}
-@media (max-width: 480px) {
-    header {
-        margin-top: 60px; /* Aumenta el espacio superior del header */
-    }
-    .logo {
-        margin-bottom: 25px; /* Aumenta el espacio entre el logo y el contenido */
-    }
-    .menu-btn {
-        top: 60px; /* Aumenta la posición del botón del menú */
+    .logo img {
+        width: 50%;
     }
     .texto-descubrimiento p {
-        font-size: 18px; /* Reduce aún más el tamaño de la fuente en pantallas muy pequeñas */
+        font-size: 1.25rem;
+    }
+    .sobre-nosotros {
+        max-width: 90%;
     }
     .sobre-nosotros h2 {
-        font-size: 24px; /* Reduce el tamaño del título en "Sobre Nosotros" */
-    }
-    .sobre-nosotros h3 {
-        font-size: 22px; /* Reduce el tamaño del subtítulo en "Sobre Nosotros" */
+        font-size: 2rem;
     }
     .sobre-nosotros p {
-        font-size: 12px; /* Reduce aún más el tamaño del texto en "Sobre Nosotros" */
+        font-size: 0.875rem;
+    }
+    form input,
+    form textarea {
+        width: 90%;
+    }
+    .menu-flotante ul {
+        flex-direction: column; /* Ajuste solo en tablets */
+    }
+}
+/* MÓVIL (Pantallas menores a 480px) */
+@media (max-width: 480px) {
+    .logo img {
+        width: 70%;
+    }
+    .texto-descubrimiento p {
+        font-size: 1rem;
+    }
+    .whatsapp-btn {
+        font-size: 1.25rem;
+        padding: 0.75rem 1.5rem;
+    }
+    .sobre-nosotros h2 {
+        font-size: 1.75rem;
+    }
+    .sobre-nosotros p {
+        font-size: 0.75rem;
+    }
+    form input,
+    form textarea {
+        width: 100%;
+    }
+    .menu-flotante ul {
+        flex-direction: column; /* Mantiene buena distribución en móvil */
     }
 }
